@@ -85,7 +85,10 @@ app.get(
   passport.authenticate("google", {
     successRedirect: "https://login-with-google-client.vercel.app/dashboard",
     failureRedirect: "https://login-with-google-client.vercel.app/login",
-  })
+  }),
+  (req, res) => {
+    console.log("Google OAuth callback reached");
+  }
 );
 
 app.get("/login/sucess", async (req, res) => {
