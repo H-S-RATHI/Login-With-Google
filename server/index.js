@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("./db/conn");
-const PORT = 6005;
 const session = require("express-session");
 const passport = require("passport");
 const OAuth2Strategy = require("passport-google-oauth2").Strategy;
@@ -106,6 +105,6 @@ app.get("/logout", (req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`server start at port no ${PORT}`);
+app.listen(() => {
+  console.log(`server start at port no`);
 });
