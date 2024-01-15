@@ -14,7 +14,7 @@ const clientsecret = "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";
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://login-with-google-client.vercel.app/",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -76,15 +76,15 @@ passport.deserializeUser((user, done) => {
 
 // initial google ouath login
 app.get(
-  "/auth/google",
+  "https://login-with-google-client.vercel.app//auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
-  "/auth/google/callback",
+  "https://login-with-google-client.vercel.app//auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/dashboard",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: "https://login-with-google-client.vercel.app/dashboard",
+    failureRedirect: "https://login-with-google-client.vercel.app/login",
   })
 );
 
@@ -101,7 +101,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:3000");
+    res.redirect("https://login-with-google-client.vercel.app/");
   });
 });
 
