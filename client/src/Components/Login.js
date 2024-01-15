@@ -4,7 +4,7 @@ import "./login.css";
 const Login = () => {
   const loginwithgoogle = () => {
     window.open(
-      "https://login-with-google-server.vercel.app/auth/google/callback",
+      "https://login-with-google-server.vercel.app/auth/google",
       "_self"
     );
   };
