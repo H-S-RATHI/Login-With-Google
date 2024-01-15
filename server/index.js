@@ -105,6 +105,6 @@ app.get("/logout", (req, res, next) => {
   });
 });
 
-app.listen(() => {
+app.listen(6005, () => {
   console.log(`server start at port no`);
 });
