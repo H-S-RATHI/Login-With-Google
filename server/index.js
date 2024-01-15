@@ -76,12 +76,12 @@ passport.deserializeUser((user, done) => {
 
 // initial google ouath login
 app.get(
-  "https://login-with-google-client.vercel.app/auth/google",
+  "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
-  "https://login-with-google-client.vercel.app/auth/google/callback",
+  "/auth/google/callback",
   passport.authenticate("google", {
     successRedirect: "https://login-with-google-client.vercel.app/dashboard",
     failureRedirect: "https://login-with-google-client.vercel.app/login",
